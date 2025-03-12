@@ -11,6 +11,7 @@ from django.core.exceptions import ValidationError
 import re
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 
 # Create your views here.
 
@@ -96,6 +97,9 @@ def log_in(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         remember = request.POST.get('remember')
+        if not User.objects.filter(username=username).exists():
+            messages.error(request,'username is not register yet')
+            return redirect('login')
         user = authenticate(username=username,password=password)
         if user is not None:
             login(request,user)
@@ -174,5 +178,12 @@ def log_out(request):
     logout(request)
     return redirect('login')
 
+@login_required(login_url='login')
 def change_password(request):
-    return render(request,'auth/change_password.html')
+    form = PasswordChangeForm(user=request.user)
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user,data=request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    return render(request,'auth/change_password.html',{'form':form})
