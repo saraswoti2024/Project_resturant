@@ -173,3 +173,6 @@ def policy(request):
 def log_out(request):
     logout(request)
     return redirect('login')
+
+def change_password(request):
+    return render(request,'auth/change_password.html')

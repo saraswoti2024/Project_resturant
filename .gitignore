@@ -27,11 +27,13 @@ logs/
 media/
 staticfiles/
 
-# Ignore IDE/editor settings
-.vscode/
-.idea/
-*.iml
+# # Ignore IDE/editor settings
+# .vscode/
+# .idea/
+# *.iml
 
-# Ignore Django migrations cache (optional)
-**/migrations/*.pyc
-**/migrations/__pycache__/
+# # Ignore Django migrations cache (optional)
+# **/migrations/*.pyc
+# **/migrations/__pycache__/
+
+.env

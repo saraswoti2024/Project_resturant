@@ -17,4 +17,5 @@ urlpatterns = [
     path('policy/',policy,name="policy"),
     path('support/',support,name="support"),
     path('logout/',log_out,name="logout"),
+    path('change_password/',change_password,name="change_password")
 ]
