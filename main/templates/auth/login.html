@@ -74,12 +74,16 @@
           <input class="remember" type="checkbox" value="remember"  name="remember"/>
           <a href="#">Remember me</a>
         </span>
-          <span class="span"><a href="{% url 'change_password' %}">Forgot password?</a></span>
+          <span class="span"><a href="{% url 'password_reset' %}">Forgot password?</a>
+            <a href="{% url 'change_password' %}">Change password</a></span>
+
           <input class="submit" type="submit" value="Login" />
           <span
+         
             >Don't have an account?
             <a class="po" href="{% url 'register' %}">Register</a></span>
         </form>
+        <a href="{% url 'social:begin' 'google-oauth2' %}"> <p>google</p></a>
       </div>
     </div>
     <script>

@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from datetime import datetime
 from .models import *
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mail,EmailMessage
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from datetime import datetime
@@ -66,7 +66,7 @@ def contact(request):
             from_email = 'saraswotikhadka2k2@gmail.com'
             recipient_list = [email] ##current database store submit
         # send_mail(subject,message,from_email,recipient_list)
-            emailmsg = Contact(subject,message,from_email,recipient_list)
+            emailmsg = EmailMessage(subject,message,from_email,recipient_list)
             emailmsg.attach_file('main/static/images/c_momo.jpg')
             emailmsg.send(fail_silently=True)
             print(email)
@@ -123,8 +123,6 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         password1 = request.POST['password1']
-        # if 'view' in request.POST:
-        #     view1 = request.POST['view']=='on'
 
         if password==password1:
             try:
@@ -187,3 +185,4 @@ def change_password(request):
             form.save()
             return redirect('login')
     return render(request,'auth/change_password.html',{'form':form})
+

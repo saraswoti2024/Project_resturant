@@ -42,6 +42,10 @@ INSTALLED_APPS = [
 
 EXTERNAL_APPS = [
     'main',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'social_django'
 ]
 INSTALLED_APPS.extend(EXTERNAL_APPS)
 
@@ -53,7 +57,26 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
+
 ]
+
+###added #where to go after google login
+LOGIN_URL="login"
+LOGIN_REDIRECT_URL ="home"
+LOGOUT_URL="logout"
+LOGOUT_REDIRECT_URL ="signin"
+
+##google sanga authenticate
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    ]
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '460231971193-va6os8he1ugmim4rue9si5kls3v9q533.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+
 
 ROOT_URLCONF = 'resturant.urls'
 
