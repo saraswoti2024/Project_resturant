@@ -12,36 +12,43 @@ import re
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
+import logging ##logger
+
+logger = logging.getLogger('django')
 
 # Create your views here.
 
 def home(request):
-    cate = Category.objects.all() 
-    momo = Momo.objects.all() 
-    cateid = request.GET.get('Category')
+    try:
+        cate = Category.objects.all() 
+        momo = Momo.objects.all() 
+        cateid = request.GET.get('Category')
+        p
+        if cateid:
+            momo = Momo.objects.filter(Category=cateid)
+        else:
+            momo = Momo.objects.all()
 
-    if cateid:
-        momo = Momo.objects.filter(Category=cateid)
-    else:
-        momo = Momo.objects.all()
 
+        if request.method=='POST':
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            phone = request.POST.get('phone')
+            message = request.POST.get('message')
 
-    if request.method=='POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
+            try:
+                user = Contact(namemodel=name,emailmodel=email,phonemodel=phone,messagemodel=message)
+                user.full_clean()
+                user.save()
+                messages.success(request,f'{name} form submitted successfully')
+                return redirect('home')
+            except Exception as e:
+                print(message)
+                messages.error(request,f'{str(e)}')
+                return redirect('home')
+    except Exception as e:
+        logger.error(str(e),exc_info=True)
 
-        try:
-            user = Contact(namemodel=name,emailmodel=email,phonemodel=phone,messagemodel=message)
-            user.full_clean()
-            user.save()
-            messages.success(request,f'{name} form submitted successfully')
-            return redirect('home')
-        except Exception as e:
-            print(message)
-            messages.error(request,f'{str(e)}')
-            return redirect('home')
     context = {
         'date':datetime.now(),
         'cate':cate,

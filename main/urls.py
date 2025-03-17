@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views as auth_views ##for forgot password when password is not known
 
 
 # app_name = 'main'
@@ -19,8 +19,10 @@ urlpatterns = [
     path('support/',support,name="support"),
     path('logout/',log_out,name="logout"),
     path('change_password/',change_password,name="change_password"),
+    # for forgot password when password is not known
     path('password_reset/', auth_views.PasswordResetView.as_view(template_name="auth/password_reset.html"), name='password_reset'),
     path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name="auth/password_reset_done.html"), name='password_reset_done'),
     path('password_reset_confirm/<uidb64>/<token>/',auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('password_reset_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="auth/login"), name='password_reset_complete'),
+    #for forgot password when password is not known end
 ]

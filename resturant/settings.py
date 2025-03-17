@@ -177,5 +177,37 @@ EMAIL_USE_TLS = config("EMAIL_USE_TLS")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 
-
+##logger
+import os
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'timestamp': {
+            'format': '{asctime} - {levelname} - {message}',
+            'style': '{',  # Ensure the style matches the format (e.g., { for Python 3.2+)
+        },
+    },
+    'handlers': {
+        
+        'file': {
+            'level': 'ERROR',  # Only log errors
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',  # Log file
+            'formatter': 'timestamp',  # Use the verbose formatter
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'timestamp',  # Refers to the 'timestamp' formatter
+        },
+    },
+    'loggers': {
+        'django': { ##yo name views ma
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+    },
+ },
+}
 
