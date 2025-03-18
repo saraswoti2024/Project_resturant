@@ -23,7 +23,6 @@ def home(request):
         cate = Category.objects.all() 
         momo = Momo.objects.all() 
         cateid = request.GET.get('Category')
-        p
         if cateid:
             momo = Momo.objects.filter(Category=cateid)
         else:

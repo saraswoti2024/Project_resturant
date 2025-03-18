@@ -104,12 +104,25 @@ WSGI_APPLICATION = 'resturant.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+###postgres connect
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('NAME'), ##database ma vako name
+        'USER': config('USER'), #database user
+        'PASSWORD': config('PASSWORD'), #database password
+        'HOST': config('HOST', default='localhost'),
+        'PORT': config('PORT', default='5432'),
     }
 }
+
 
 
 # Password validation
