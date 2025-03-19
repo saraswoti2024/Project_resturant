@@ -1,0 +1,75 @@
+2025-03-17 13:23:07,543 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 13:41:33,655 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 15:03:01,677 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:54:32,082 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:58:34,468 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:58:41,711 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:58:45,240 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:58:55,766 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:01,546 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:07,068 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:09,527 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:16,062 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:22,437 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:25,721 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
+2025-03-18 21:59:28,354 - ERROR - name 'p' is not defined
+Traceback (most recent call last):
+  File "E:\learn\django\PROJECT\resturant\main\views.py", line 26, in home
+    p
+NameError: name 'p' is not defined
